@@ -1,5 +1,5 @@
 resource_group_name     = "TaskoBoardRG9812"
-resource_group_location = "West Europe"
+resource_group_location = "North Europe"
 app_service_plan_name   = "TaskoBoardSP9812"
 app_service_name        = "TaskoBoardWA9812"
 sql_server_name         = "mssqlserver9812"

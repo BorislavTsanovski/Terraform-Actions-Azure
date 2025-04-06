@@ -32,12 +32,14 @@ resource "azurerm_mssql_server" "TaskBoardDS" {
 }
 
 resource "azurerm_mssql_database" "TaskBoardDB" {
-  name           = var.sql_database_name
-  server_id      = azurerm_mssql_server.TaskBoardDS.id
-  collation      = "SQL_Latin1_General_CP1_CI_AS"
-  license_type   = "LicenseIncluded"
-  sku_name       = "S0"
-  zone_redundant = false
+  name                 = var.sql_database_name
+  server_id            = azurerm_mssql_server.TaskBoardDS.id
+  collation            = "SQL_Latin1_General_CP1_CI_AS"
+  license_type         = "LicenseIncluded"
+  sku_name             = "S0"
+  zone_redundant       = false
+  storage_account_type = "Zone"
+  geo_backup_enabled   = false
 }
 
 resource "azurerm_mssql_firewall_rule" "TaskBoardFR" {
